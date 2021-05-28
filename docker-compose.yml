@@ -1,0 +1,18 @@
+version: "3"
+services:
+  auth:
+    container_name: local-auth
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    volumes: 
+    - .:/app
+    ports:
+    - 3000:3000
+  mongo:
+    container_name: local-mongo
+    image: mongo
+    ports:
+    - 27017:27017
+    volumes: 
+    - /data/db
