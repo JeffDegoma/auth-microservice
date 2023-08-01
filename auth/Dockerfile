@@ -10,7 +10,6 @@ COPY . /usr/src/app
 #     && tar -zxvf mongodb-linux-x86_64-debian10-6.0.0.tgz \
 #     && rm mongodb-linux-x86_64-debian10-6.0.0.tgz
 
-# Rename extracted
 # RUN mv mongodb-* /etc/mongodb
 
 
