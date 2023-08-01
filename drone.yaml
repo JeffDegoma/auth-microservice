@@ -4,7 +4,7 @@ name: default
 
 steps:
 - name: test
-image: node:15-buster
-commands:
-- npm install
-- npm test
+  image: node:15-buster
+  commands:
+    - npm install
+    - npm test
