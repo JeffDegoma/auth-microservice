@@ -13,8 +13,6 @@ COPY . /usr/src/app
 # Rename extracted
 # RUN mv mongodb-* /etc/mongodb
 
-# Point env variable to binary
-# ENV MONGOMS_SYSTEM_BINARY=/etc/mongodb/bin/mongod
 
 
 RUN npm install --only=prod
