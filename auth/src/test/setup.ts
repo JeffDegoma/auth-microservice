@@ -5,8 +5,12 @@ import { app } from '../app'
 let mongo: any
 //jest hook
 beforeAll(async () => {
-    mongo = new MongoMemoryServer()
-    const mongoURI = await mongo.getUri()
+    jest.setTimeout(10000);
+    // mongo = new MongoMemoryServer()
+    // mongo = await MongoMemoryServer.create({ binary: { version: '6.0.0' } });
+    mongo = await MongoMemoryServer.create();
+    // await mongo.start()
+    const mongoURI = mongo.getUri()
 
     await mongoose.connect(mongoURI, {
         useNewUrlParser: true,
@@ -24,6 +28,6 @@ beforeEach(async () => {
 })
 
 afterAll(async() => {
-    await mongo.stop()
+    // await mongo.stop()
     await mongoose.connection.close()
 })

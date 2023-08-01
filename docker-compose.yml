@@ -1,12 +1,13 @@
-version: "3"
+version: "3.7"
 services:
   auth:
+    platform: linux/x86_64
     container_name: local-auth
     build: 
-      context: .
+      context: ./auth
       dockerfile: Dockerfile
     volumes: 
-    - .:/app
+    - .:/backend
     ports:
     - 3000:3000
   mongo:
